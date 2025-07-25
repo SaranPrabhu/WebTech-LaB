@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Zolarr Service Request Form</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Request Solar Services</h1>
+        <form action="thankyou.html" method="POST">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" br name="name" required placeholder="Your full name" />
+<br>
+<br>
+<br>
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" br required placeholder="e.g. +1 123 456 7890" pattern="[\+0-9\s\-]{7,15}" />
+<br>
+<br>
+<br>
+            <label for="address">Address</label><br>
+            <textarea id="address" name="address" required placeholder="Your address"></textarea>
+<br>
+<br>
+<br>
+            <label for="serviceType">Type of Service Requested</label>
+            <select id="serviceType" name="serviceType" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="installation">Installation</option>
+                <option value="maintenance">Maintenance / Repair</option>
+                <option value="consultation">Consultation</option>
+                <option value="other">Other</option>
+            </select>
+<br>
+<br>
+<br>
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+</body>
+</html>
