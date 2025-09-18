@@ -1,0 +1,165 @@
+/* General body and font styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* --- Navigation Bar --- */
+.navbar {
+    position: fixed; /* Keeps the navbar at the top of the viewport */
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between; /* Puts logo on one side and links on the other */
+    align-items: center;
+    padding: 10px 30px;
+    z-index: 1000; /* Ensures the navbar is always on top of other content */
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 50%;
+}
+
+.title {
+    font-size: 1.5rem;
+    color: #4CAF50; /* A color often associated with growth and success */
+    margin: 0;
+}
+
+.navbar nav ul {
+    list-style: none; /* Removes bullet points */
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 25px;
+}
+
+.navbar nav ul li a {
+    text-decoration: none; /* Removes underline from links */
+    color: #555;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar nav ul li a:hover {
+    color: #2e8b57; /* Darker green on hover */
+}
+
+/* --- Landing Page Background --- */
+.landing-page {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Fills the entire viewport height */
+    background-image: url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=2940&auto=format&fit=crop'); /* Replace with a high-quality, relevant image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* Puts the background behind the login form */
+}
+
+/* --- Login Form --- */
+.login-container {
+    position: absolute; /* Positions the container relative to the body */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the element perfectly */
+    z-index: 10;
+}
+
+.login-form {
+    background-color: rgba(255, 255, 255, 0.95); /* Slightly transparent white */
+    padding: 40px;
+    border-radius: 20px; /* Rounded corners */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2); /* Soft box shadow */
+    text-align: center;
+    max-width: 400px;
+    width: 90vw; /* Responsive width */
+}
+
+.login-form h2 {
+    margin-top: 0;
+    color: #4CAF50;
+    font-size: 2rem;
+}
+
+.login-form p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px; /* Rounded corners for input fields */
+    box-sizing: border-box; /* Ensures padding doesn't affect total width */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 8px rgba(76, 175, 80, 0.3); /* Green glow on focus */
+}
+
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.login-button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.signup-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
