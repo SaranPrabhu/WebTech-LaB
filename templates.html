@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Templates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/x-icon">
+    <style>
+        /* Styles for the templates page */
+        .templates-page {
+            padding-top: 100px;
+            text-align: center;
+        }
+
+        .templates-page h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #1a73e8;
+            margin-bottom: 50px;
+        }
+
+        .template-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 40px;
+            padding: 20px;
+        }
+
+        .template {
+            width: 320px;
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .template:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .template img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .template-info {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .template-info h3 {
+            margin: 0;
+            color: #333;
+            font-size: 1.3rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/50" alt="Resume Builder Logo" class="logo">
+            <h1 class="title">Virtual Resume Builder</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="templates-page">
+        <h2>Choose Your Professional Template</h2>
+        <div class="template-container">
+            <div class="template">
+                <img src="https://images.unsplash.com/photo-1541746972966-d4468f7b0f6f?q=80&w=2787&auto=format&fit=crop" alt="Modern Resume Template">
+                <div class="template-info">
+                    <h3>Modern</h3>
+                </div>
+            </div>
+
+            <div class="template">
+                <img src="https://images.unsplash.com/photo-1619418606338-78b543b591b9?q=80&w=2787&auto=format&fit=crop" alt="Classic Resume Template">
+                <div class="template-info">
+                    <h3>Classic</h3>
+                </div>
+            </div>
+
+            <div class="template">
+                <img src="https://images.unsplash.com/photo-1627916568853-9a3d7d74b9d0?q=80&w=2787&auto=format&fit=crop" alt="Creative Resume Template">
+                <div class="template-info">
+                    <h3>Creative</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

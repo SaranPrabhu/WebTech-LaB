@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Resume Builder</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="https://via.placeholder.com/32" type="image/x-icon">
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/50" alt="Resume Builder Logo" class="logo">
+            <h1 class="title">Virtual Resume Builder</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="landing-page">
+        </div>
+
+    <div class="login-container">
+        <form class="login-form" id="loginForm">
+            <h2>Login</h2>
+            <p>Ready to build your professional resume?</p>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" placeholder="Enter your username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="login-button">Log In</button>
+            <p class="signup-link">Don't have an account? <a href="#">Sign Up</a></p>
+        </form>
+    </div>
+
+    <script>
+        const loginForm = document.getElementById('loginForm');
+        loginForm.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const validUsername = 'user';
+            const validPassword = 'password123';
+
+            const usernameInput = document.getElementById('username').value;
+            const passwordInput = document.getElementById('password').value;
+
+            if (usernameInput === validUsername && passwordInput === validPassword) {
+                window.location.href = 'templates.html';
+            } else {
+                alert('Invalid username or password. Please try again.');
+            }
+        });
+    </script>
+
+</body>
+</html>
