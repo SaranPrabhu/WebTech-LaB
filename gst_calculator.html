@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GST Calculator</title>
+    <link rel="stylesheet" href="gst_calculator.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>GST Calculator</h1>
+        <div class="form-group">
+            <label for="inputAmount">Amount:</label>
+            <input type="number" id="inputAmount" placeholder="Enter amount">
+        </div>
+
+        <div class="form-group">
+            <label for="gstRate">GST Rate:</label>
+            <select id="gstRate">
+                <option value="0">Select GST Rate</option>
+                <option value="0.05">5%</option>
+                <option value="0.12">12%</option>
+                <option value="0.18">18%</option>
+                <option value="0.28">28%</option>
+            </select>
+        </div>
+
+        <div class="result-box">
+            <p>Actual Amount: <span id="actualAmount">0.00</span></p>
+            <p>GST Amount: <span id="gstAmount">0.00</span></p>
+            <p class="total">Total Amount: <span id="totalAmount">0.00</span></p>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            function calculateGST() {
+                const amount = parseFloat($('#inputAmount').val()) || 0;
+                const gstRate = parseFloat($('#gstRate').val()) || 0;
+
+                let actualAmount = amount;
+                let gstAmount = actualAmount * gstRate;
+                let totalAmount = actualAmount + gstAmount;
+
+                $('#actualAmount').text(actualAmount.toFixed(2));
+                $('#gstAmount').text(gstAmount.toFixed(2));
+                $('#totalAmount').text(totalAmount.toFixed(2));
+            }
+
+            // jQuery actions:
+            // 1. .on('input', handler) for text input changes (number box)
+            $('#inputAmount').on('input', calculateGST);
+
+            // 2. .on('change', handler) for dropdown list box changes
+            $('#gstRate').on('change', calculateGST);
+
+            // Initial calculation on page load in case of default values
+            calculateGST();
+        });
+    </script>
+</body>
+</html>

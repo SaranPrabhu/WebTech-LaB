@@ -1,0 +1,181 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.header-bar {
+    width: 100%;
+    background-color: #8c2a2a; /* Dark red/brown from image */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-bar h1 {
+    margin: 0;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin-top: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    padding: 20px;
+}
+
+.cake-display {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 30px;
+}
+
+.cake-item {
+    text-align: center;
+    width: 200px; /* Fixed width for consistency */
+}
+
+.cake-item img {
+    width: 100%;
+    height: 180px; /* Fixed height for consistency */
+    object-fit: cover; /* Ensures images cover the area without distortion */
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.cake-item p {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+}
+
+.cake-item .price {
+    color: #8c2a2a;
+}
+
+.order-section {
+    text-align: center;
+    padding: 20px;
+}
+
+.order-section h2 {
+    color: #333;
+    font-size: 2em;
+    margin-bottom: 30px;
+}
+
+.order-form {
+    width: 80%;
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    border: 1px solid #eee;
+}
+
+.form-group {
+    text-align: left;
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #555;
+}
+
+.form-group input[type="number"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="number"]:focus {
+    border-color: #8c2a2a;
+    outline: none;
+}
+
+#placeOrderBtn {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s;
+}
+
+#placeOrderBtn:hover {
+    background-color: #0056b3;
+    transform: translateY(-1px);
+}
+
+#billSection {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed #ccc;
+}
+
+.bill-text {
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.total-price-box {
+    background-color: #28a745; /* Green for total price */
+    color: white;
+    padding: 15px 20px;
+    border-radius: 5px;
+    font-size: 1.5em;
+    font-weight: bold;
+    display: inline-block;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+#totalPrice {
+    font-size: 1.1em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cake-display {
+        flex-direction: column;
+        align-items: center;
+    }
+    .cake-item {
+        width: 80%;
+        max-width: 250px;
+    }
+    .header-bar h1 {
+        font-size: 2em;
+    }
+    .order-form {
+        width: 95%;
+        padding: 20px;
+    }
+}

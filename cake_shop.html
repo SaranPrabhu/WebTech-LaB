@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cake Shop</title>
+    <link rel="stylesheet" href="cake_shop.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="header-bar">
+        <h1>CAKE SHOP</h1>
+    </div>
+
+    <div class="container">
+        <div class="cake-display">
+            <div class="cake-item">
+                <img src="https://images.unsplash.com/photo-1579736854743-bc0f1882d2c7?q=80&w=2787&auto=format&fit=crop" alt="Rainbow Cake">
+                <p>Rainbow Cake – Rs. <span class="price" data-price="300">300</span></p>
+            </div>
+            <div class="cake-item">
+                <img src="https://images.unsplash.com/photo-1562963380-a616428e104f?q=80&w=2787&auto=format&fit=crop" alt="Chocolate Cake">
+                <p>Chocolate Cake – Rs. <span class="price" data-price="200">200</span></p>
+            </div>
+            <div class="cake-item">
+                <img src="https://images.unsplash.com/photo-1587313329627-2c9066668ce3?q=80&w=2835&auto=format&fit=crop" alt="Red Velvet Cake">
+                <p>Red Velvet Cake – Rs. <span class="price" data-price="250">250</span></p>
+            </div>
+            <div class="cake-item">
+                <img src="https://images.unsplash.com/photo-1627960309326-8798e3b7b252?q=80&w=2835&auto=format&fit=crop" alt="Black Forest Cake">
+                <p>Black Forest Cake – Rs. <span class="price" data-price="350">350</span></p>
+            </div>
+        </div>
+
+        <div class="order-section">
+            <h2>Order Cake</h2>
+            <div class="order-form">
+                <div class="form-group">
+                    <label for="rainbowQty">Rainbow Cake (Quantity)</label>
+                    <input type="number" id="rainbowQty" class="cake-quantity" data-cake-id="rainbow" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="chocolateQty">Chocolate Cake (Quantity)</label>
+                    <input type="number" id="chocolateQty" class="cake-quantity" data-cake-id="chocolate" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="redVelvetQty">Red Velvet Cake (Quantity)</label>
+                    <input type="number" id="redVelvetQty" class="cake-quantity" data-cake-id="redVelvet" value="0" min="0">
+                </div>
+                <div class="form-group">
+                    <label for="blackForestQty">Black Forest Cake (Quantity)</label>
+                    <input type="number" id="blackForestQty" class="cake-quantity" data-cake-id="blackForest" value="0" min="0">
+                </div>
+
+                <button id="placeOrderBtn">Place Order</button>
+
+                <div id="billSection" style="display: none;">
+                    <p class="bill-text">Purchase Order Bill!!!</p>
+                    <div class="total-price-box">
+                        Total Price: Rs. <span id="totalPrice">0</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            const cakePrices = {
+                rainbow: 300,
+                chocolate: 200,
+                redVelvet: 250,
+                blackForest: 350
+            };
+
+            function calculateTotal() {
+                let total = 0;
+                $('.cake-quantity').each(function() {
+                    const cakeId = $(this).data('cake-id');
+                    const quantity = parseInt($(this).val()) || 0; // Get quantity, default to 0 if NaN
+                    total += (cakePrices[cakeId] * quantity);
+                });
+                $('#totalPrice').text(total.toFixed(0)); // Display total without decimals
+                $('#billSection').show(); // Show the bill section
+            }
+
+            // Initial quantities as shown in image (for demonstration, set default values in HTML as well)
+            $('#rainbowQty').val(2);
+            $('#chocolateQty').val(1);
+            $('#redVelvetQty').val(2);
+            $('#blackForestQty').val(1);
+
+            // Event listener for the "Place Order" button
+            $('#placeOrderBtn').on('click', calculateTotal);
+
+            // Optional: Recalculate on quantity change for a more dynamic feel
+            $('.cake-quantity').on('change', calculateTotal); // Use 'change' event for input
+            
+            // Initial calculation when the page loads with default quantities
+            calculateTotal();
+        });
+    </script>
+</body>
+</html>
