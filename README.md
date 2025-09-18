@@ -19,3 +19,9 @@ Exp5_JavaScript – DOM Elements, Events and Functions
 math_operations.html
 
 emi_calculator.html-basic_emi calculator
+
+Exp6_ Dynamic Website Design with JQuery Actions 
+
+gst_calculator.html
+
+cake_shop.html
